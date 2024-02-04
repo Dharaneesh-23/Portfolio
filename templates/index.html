@@ -1,0 +1,551 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <!-- meta data -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!--font-family-->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+        <!-- title of site -->
+        <title>Dharaneesh</title>
+
+        <!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="{%static 'logo/favicon.png'%}"/>
+       
+        <!--font-awesome.min.css-->
+        <link rel="stylesheet" href="{%static 'css/font-awesome.min.css'%}">
+
+		<!--flat icon css-->
+		<link rel="stylesheet" href="{%static 'css/flaticon.css'%}">
+
+		<!--animate.css-->
+        <link rel="stylesheet" href="{%static 'css/animate.css'%}">
+
+        <!--owl.carousel.css-->
+        <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css'%}">
+		<link rel="stylesheet" href="{%static 'css/owl.theme.default.min.css'%}">
+		
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+		
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="{%static 'css/bootsnav.css'%}" >	
+        
+        <!--style.css-->
+        <link rel="stylesheet" href="{%static 'css/style.css'%}">
+        
+        <!--responsive.css-->
+        <link rel="stylesheet" href="{%static 'css/responsive.css'%}">
+
+		<!--article.css-->
+		<link rel="stylesheet" href="{%static 'css/article.css'%}">
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		
+        <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+	
+	<body>
+		<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+		
+		<!-- top-area Start -->
+		<header class="top-area">
+			<div class="header-area">
+				<!-- Start Navigation -->
+			    <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
+
+			        <div class="container">
+
+			            <!-- Start Header Navigation -->
+			            <div class="navbar-header">
+			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+			                    <i class="fa fa-bars"></i>
+			                </button>
+							{% for i in resume%}
+			                <a class="navbar-brand">{{i.name}}</a>
+							{% endfor %}
+			            </div><!--/.navbar-header-->
+			            <!-- End Header Navigation -->
+
+			            <!-- Collect the nav links, forms, and other content for toggling -->
+			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+			                <li class=" smooth-menu active"></li>
+								<li class="smooth-menu"><a href="#about">about</a></li>
+			                    <li class="smooth-menu"><a href="#portfolio">projects</a></li>
+			                    <li class=" smooth-menu"><a href="#education">education</a></li>
+			                    <li class="smooth-menu"><a href="#experience">experience</a></li>
+			                    <li class="smooth-menu"><a href="#projects">skills</a></li>
+			                    <li class="smooth-menu"><a href="#contact">contact</a></li>
+			                </ul><!--/.nav -->
+			            </div><!-- /.navbar-collapse -->
+			        </div><!--/.container-->
+			    </nav><!--/nav-->
+			    <!-- End Navigation -->
+			</div><!--/.header-area-->
+
+		    <div class="clearfix"></div>
+
+		</header><!-- /.top-area-->
+		<!-- top-area End -->
+	
+		<!--welcome-hero start -->
+		<section id="welcome-hero" class="welcome-hero">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="header-text">
+							{% for i in resume%}
+							<h2>hi <span>,</span> i am <br> {{i.name}}<span>.</span>   </h2>
+							<p>{{i.profile}}</p>
+								<a href={{resume.link}} download>download resume</a>
+							{% endfor %}
+						</div><!--/.header-text-->
+					</div><!--/.col-->
+				</div><!-- /.row-->
+			</div><!-- /.container-->
+
+		</section><!--/.welcome-hero-->
+		<!--welcome-hero end -->
+
+		<!--about start -->
+		<section id="about" class="about">
+			<div class="section-heading text-center">
+				<h2>about me</h2>
+			</div>
+			<div class="container">
+				<div class="about-content">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="single-about-txt">
+								{%for i in about%}
+									<h3>
+										{{i.abt}}
+									</h3>
+									<p>
+										{{i.desc}}
+									</p>
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="single-about-add-info">
+												<h3>phone</h3>
+												<p>{{i.ph}}</p>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="single-about-add-info">
+												<h3>email</h3>
+												<p>{{i.email}}</p>
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="col-sm-offset-1 col-sm-5">
+							<div class="single-about-img">
+								<img src="{%static 'images/about/Dharaneesh_profile.jpg'%}" alt="profile_image">
+								<div class="about-list-icon">
+									<ul>
+										{% for link in links %}
+											<li>
+												<a href="{{link.link}}">
+													<i  class="{{link.logo}}" aria-hidden="true"></i>
+												</a>
+											</li><!-- / li -->
+										{% endfor %}
+									</ul><!-- / ul -->
+								</div><!-- /.about-list-icon -->
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!--/.about-->
+		<!--about end -->
+		
+		<!--portfolio start -->
+		<section id="portfolio" class="portfolio">
+			<div class="portfolio-details">
+				<div class="section-heading text-center">
+					<h2>projects</h2>
+				</div>
+				<div class="container">
+					<div class="portfolio-content">
+							<div class="row">
+							{% for i in projects%}
+									<div class="col-sm-3">
+										<div class = "card">
+											<img src="{{i.img.url}}" alt="">
+											<div class="card-content">
+											  <h2>
+												{{i.name}}
+											  </h2>
+											  <p>
+												Tech Stack: <br> 
+											  </p>
+											  <a href="{{i.p_link}}" class="button">
+												Find out more <i class="fa fa-angle-right"></i>
+											  </a>
+											</div>
+										  </div>
+									</div><!-- /.col -->
+							{% endfor %}
+							</div><!-- /.row -->
+					</div><!--/.gallery-content-->
+				</div><!--/.container-->
+			</div><!--/.portfolio-details-->
+
+		</section><!--/.portfolio-->
+		<!--portfolio end -->
+
+		<!--education start -->
+		<section id="education" class="education">
+			<div class="section-heading text-center">
+				<h2>education</h2>
+			</div>
+			<div class="container">
+				<div class="education-horizontal-timeline">
+					<div class="row">
+						{% for i in edu%}
+							<div class="col-sm-4">
+								<div class="single-horizontal-timeline">
+									<div class="experience-time">
+										<h2>{{i.year}}</h2>
+										<h3>{{i.course}}</h3>
+									</div><!--/.experience-time-->
+									<div class="timeline-horizontal-border">
+										<i class="fa fa-circle" aria-hidden="true"></i>
+										<span class="single-timeline-horizontal"></span>
+									</div>
+									<div class="timeline">
+										<div class="timeline-content">
+											<h4 class="title">
+												{{i.institution}}
+											</h4>
+											<h5>{{i.place}}</h5>
+											<p class="description">
+												{{i.desc}} 
+											</p>
+										</div><!--/.timeline-content-->
+									</div><!--/.timeline-->
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+
+		</section><!--/.education-->
+		<!--education end -->
+
+		<!--experience start -->
+		<section id="experience" class="experience">
+			<div class="section-heading text-center">
+				<h2>experience</h2>
+			</div>
+			<div class="container">
+				<div class="experience-content">
+						<div class="main-timeline">
+							<ul>
+								{% for i in experience %}
+									{% if loop.index is even %}
+										<li>
+											<div class="single-timeline-box fix">
+												<div class="row">
+													<div class="col-md-offset-1 col-md-5 experience-time-responsive">
+														<div class="experience-time">
+															<h2>
+																<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+																{{i.duration}}
+															</h2>
+															<h3>{{i.position}}r</h3>
+														</div><!--/.experience-time-->
+													</div><!--/.col-->
+													<div class="col-md-5">
+														<div class="timeline">
+															<div class="timeline-content text-right">
+																<h4 class="title">
+																	{{i.company}}
+																</h4>
+																<h5>{{i.location}}</h5>
+																<p class="description">
+																	{{i.desc}} 
+																</p>
+															</div><!--/.timeline-content-->
+														</div><!--/.timeline-->
+													</div><!--/.col-->
+													<div class="col-md-offset-1 col-md-5 experience-time-main">
+														<div class="experience-time">
+															<h2>
+																<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+																{{i.duration}}
+															</h2>
+															<h3>{{i.position}}</h3>
+														</div><!--/.experience-time-->
+													</div><!--/.col-->
+												</div>
+											</div><!--/.single-timeline-box-->
+										</li>
+									{% else %}
+										<li>
+											<div class="single-timeline-box fix">
+												<div class="row">
+													<div class="col-md-5">
+														<div class="experience-time text-right">
+															<h2>{{i.duration}}</h2>
+															<h3>{{i.position}}</h3>
+														</div><!--/.experience-time-->
+													</div><!--/.col-->
+													<div class="col-md-offset-1 col-md-5">
+														<div class="timeline">
+															<div class="timeline-content">
+																<h4 class="title">
+																	<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+																	{{i.company}}
+																</h4>
+																<h5>{{i.location}}</h5>
+																<p class="description">
+																	{{i.desc}} 
+																</p>
+															</div><!--/.timeline-content-->
+														</div><!--/.timeline-->
+													</div><!--/.col-->
+												</div>
+											</div><!--/.single-timeline-box-->
+										</li>
+									{% endif %}
+								{% endfor %}
+							</ul>
+						</div><!--.main-timeline-->
+					</div><!--.experience-content-->
+			</div>
+
+		</section><!--/.experience-->
+		<!--experience end -->
+		<!--projects start -->
+		<section id="projects" class="projects">
+			<div class="profiles-details">
+				<div class="section-heading text-center">
+					<h2>skills</h2>
+				</div>
+				<div class="container">
+					<div class="profiles-content">
+						<!-- for group-->
+						{% for group in skills %}
+						<div class="row">
+							{% for i in group %}
+							<!--for column-->
+							<div class="col-sm-3">
+								{% if forloop.counter != 4%}
+								<div class="single-profile">
+									<div class="profile-txt">
+										<a href=""><i class="{{i.logo}}"></i></a>
+										<div class="profile-icon-name">{{i.name}}</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href=""><i class="{{i.logo}}"></i></a>
+											<div class="profile-icon-name">{{i.name}}</div>
+										</div>
+									</div>
+								</div>
+								{% else %}
+								<div class="single-profile profile-no-border">
+									<div class="profile-txt">
+										<a href=""><i class="{{i.logo}}"></i></a>
+										<div class="profile-icon-name">{{i.name}}</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href=""><i class="{{i.logo}}"></i></a>
+											<div class="profile-icon-name">{{i.name}}</div>
+										</div>
+									</div>
+								</div>
+								{% endif %}
+							</div>
+							{% endfor %}
+							{% if forloop.counter != 1 %}	
+								<div class="profile-border"></div>
+							{% endif %}
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+
+		</section><!--/.projects-->
+		<!--projects end -->
+
+		
+
+		<!--contact start -->
+		<section id="contact" class="contact">
+			<div class="section-heading text-center">
+				<h2>contact me</h2>
+			</div>
+			<div class="container">
+				<div class="contact-content">
+					<div class="row">
+						<div class="col-md-offset-1 col-md-5 col-sm-6">
+							<div class="single-contact-box">
+								<div class="contact-form">
+									<form action="" method="post">
+										{% csrf_token %}
+										<div class="row">
+											<div class="col-sm-6 col-xs-12">
+												<div class="form-group">
+												  <input type="text" class="form-control" id="name" placeholder="Name*" name="firstname">
+												</div><!--/.form-group-->
+											</div><!--/.col-->
+											<div class="col-sm-6 col-xs-12">
+												<div class="form-group">
+													<input type="email" class="form-control" id="email" placeholder="Email*" name="email">
+												</div><!--/.form-group-->
+											</div><!--/.col-->
+										</div><!--/.row-->
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+												</div><!--/.form-group-->
+											</div><!--/.col-->
+										</div><!--/.row-->
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<textarea class="form-control" rows="8" id="comment" placeholder="Message" name="message" ></textarea>
+												</div><!--/.form-group-->
+											</div><!--/.col-->
+										</div><!--/.row-->
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="single-contact-btn">
+													<button class="contact-btn" type="submit">submit</a>
+												</div><!--/.single-single-contact-btn-->
+											</div><!--/.col-->
+										</div><!--/.row-->
+									</form><!--/form-->
+								</div><!--/.contact-form-->
+							</div><!--/.single-contact-box-->
+						</div><!--/.col-->
+						<div class="col-md-offset-1 col-md-5 col-sm-6">
+							<div class="single-contact-box">
+								<div class="contact-adress">
+									{% for i in resume%}
+									<div class="contact-add-head">
+										<h3>{{i.name}}</h3>
+										<p>{{i.profile}}</p>
+									</div>
+									{% endfor %}
+									{% for i in about%}
+									<div class="contact-add-info">
+										<div class="single-contact-add-info">
+											<h3>phone</h3>
+											<p>{{i.ph}}</p>
+										</div>
+										<div class="single-contact-add-info">
+											<h3>email</h3>
+											<p>{{i.email}}</p>
+										</div>
+										<div class="single-contact-add-info">
+											<h3>website</h3>
+											<p>www.brownsine.com</p>
+										</div>
+									</div>
+								</div><!--/.contact-adress-->
+								{% endfor %}
+								<div class="hm-foot-icon">
+									<ul>
+										{% for link in links%}
+											<li><a href="{{link.link}}"><i class="{{link.logo}}"></i></a></li><!--/li-->
+										{% endfor %}
+										<li><a href="https://drive.google.com/drive/folders/11pIVo87mqgAfnboPn_BiyOPlL0QVyFvn?usp=sharing"><i class="fas fa-award"></i></a></li>
+									</ul><!--/ul-->
+								</div><!--/.hm-foot-icon-->
+							</div><!--/.single-contact-box-->
+						</div><!--/.col-->
+					</div><!--/.row-->
+				</div><!--/.contact-content-->
+			</div><!--/.container-->
+
+		</section><!--/.contact-->
+		<!--contact end -->
+
+		<!--footer-copyright start-->
+		<footer id="footer-copyright" class="footer-copyright">
+			<div class="container">
+				<div class="hm-footer-copyright text-center">
+					<p>
+						&copy; copyright Dharaneesh. Design and developed by dharaneesh23
+					</p><!--/p-->
+				</div><!--/.text-center-->
+			</div><!--/.container-->
+
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" ></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.footer-copyright-->
+		<!--footer-copyright end-->
+		
+		<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+		<script src="{%static 'js/jquery.js'%}"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="{%static 'js/bootstrap.min.js'%}"></script>
+		
+		<!-- bootsnav js -->
+		<script src="{%static 'js/bootsnav.js'%}"></script>
+		
+		<!-- jquery.sticky.js -->
+		<script src="{%static 'js/jquery.sticky.js'%}"></script>
+		
+		<!-- for progress bar start-->
+
+		<!-- progressbar js -->
+		<script src="{%static 'js/progressbar.js'%}"></script>
+
+		<!-- appear js -->
+		<script src="{%static 'js/jquery.appear.js'%}"></script>
+
+		<!-- for progress bar end -->
+
+		<!--owl.carousel.js-->
+        <script src="{%static 'js/owl.carousel.min.js'%}"></script>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		
+        
+        <!--Custom JS-->
+        <script src="{%static 'js/custom.js'%}"></script>
+        
+    </body>
+	
+</html>
